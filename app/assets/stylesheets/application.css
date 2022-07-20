@@ -13,3 +13,141 @@
  *= require_tree .
  *= require_self
  */
+
+.parent-container {
+    border-left: 1px solid #dee2e6;
+    border-right: 1px solid #dee2e6;
+    box-shadow: -60px 0px 50px -90px #696565, 60px 0px 50px -90px #696565;
+}
+
+.username-space {
+}
+
+.user-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.user-background {
+    background-image: url('about.jpg');
+    background-size: cover;
+    height: 50vh;
+}
+
+.user-grid {
+    grid-auto-flow: column;
+}
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+
+@media (max-width: 450px) {
+    .h-custom {
+        height: 100%;
+    }
+}
+
+
+/*Nav Styles Start*/
+.search-section {
+    width: 70%;
+}
+
+/*Nav Styles End*/
+
+/*Font-family Styles Start*/
+.font-open-sans {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.font-comic-neue {
+    font-family: 'Comic Neue', sans-serif;
+}
+
+.font-jost {
+    font-family: 'Jost', sans-serif;
+}
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Font-family Styles End*/
+
+/*Font-color Styles Start*/
+.font-color-blue {
+    color: #2CA7EC;
+}
+
+.font-color-white {
+    color: #FFFFFF;
+}
+
+.font-color-black {
+    color: #000000;
+}
+
+.font-color-grey {
+    color: #696565;
+}
+
+/*Font-color Styles End*/
+
+/*Background-color Styles Start*/
+.bg-color-blue {
+    background-color: #2CA7EC;
+}
+
+.bg-color-black {
+    background-color: #000000;
+}
+
+.bg-color-while {
+    background-color: #FFFFFF;
+}
+
+.bg-color-grey {
+    background-color: #696565;
+}
+
+/*Background-color Styles End*/
+
+/*Post Session Styles Start*/
+.parent-container-max-width {
+    margin: auto;
+    max-width: 100%;
+}
+
+@media (min-width: 576px) {
+    .parent-container-max-width {
+        max-width: 500px;
+    }
+}
+
+@media (min-width: 768px) {
+    .parent-container-max-width {
+        max-width: 620px;
+    }
+}
+
+@media (min-width: 992px) {
+    .parent-container-max-width {
+        max-width: 760px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .parent-container-max-width {
+        max-width: 760px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .parent-container-max-width {
+        max-width: 760px;
+    }
+}
+
+/*Post Session Styles End*/
