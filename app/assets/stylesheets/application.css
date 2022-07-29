@@ -14,14 +14,23 @@
  *= require_self
  */
 
+.top-nav {
+    position: sticky;
+    top: 0;
+}
+
+.bottom-nav {
+    position: sticky;
+    bottom: 0.1%;
+}
+
 .parent-container {
     border-left: 1px solid #dee2e6;
     border-right: 1px solid #dee2e6;
     box-shadow: -60px 0px 50px -90px #696565, 60px 0px 50px -90px #696565;
 }
 
-.username-space {
-}
+.username-space {}
 
 .user-profile {
     width: 50px;
@@ -48,6 +57,34 @@
         height: 100%;
     }
 }
+
+.border-none {
+    border: none !important;
+}
+
+.post-border {
+    background-color: transparent !important;
+    border-bottom: 1.5px solid #2CA7EC !important;
+}
+
+.post-border ::placeholder {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px !important;
+}
+
+.post-border {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
 
 
 /*Nav Styles Start*/
@@ -78,7 +115,7 @@
 
 /*Font-color Styles Start*/
 .font-color-blue {
-    color: #2CA7EC;
+    color: #2CA7EC !important;
 }
 
 .font-color-white {

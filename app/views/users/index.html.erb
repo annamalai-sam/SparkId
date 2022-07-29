@@ -1,4 +1,4 @@
-<div class="container-fluid bg-light">
+<div class="container-fluid top-nav bg-light">
   <div class="container d-flex align-items-center">
     <div class="ps-lg-2 ps-md-3 ps-sm-1 ps-xl-4 ps-xxl-5">
       <a href="/" class="font-comic-neue font-color-blue text-decoration-none h3">
@@ -9,13 +9,25 @@
 
     <form class="ps-lg-2 ps-md-3 ps-sm-2 ps-xl-4 ps-xxl-5 d-inline-flex search-section">
       <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
       <button class="btn " type="submit">
-        <i class="fa fa-search font-color-blue fa-lg" aria-hidden="true"></i>
+        <i class="fa fa-search font-color-blue fa-2x" aria-hidden="true"></i>
       </button>
     </form>
 
     <div class="me-auto ps-lg-2  ps-md-3 ps-sm-2 ps-2 ps-xl-4 ps-xxl-5">
-      <%= image_tag asset_path('dummy_profile_female.png'), class: 'ms-auto', style: 'width:75px; height: 75px;' %>
+      <% if session[:user_id] != nil %>
+        <a href="/users/profile">
+          <%= image_tag asset_path('dummy_profile_female.png'), class: 'ms-auto', style: 'width:75px; height: 75px;' %>
+        </a>
+      <% else %>
+        <a href="users/login">
+          <button class="btn font-color-blue h1">
+            <i class="fa fa-sign-in font-color-blue fa-3x" aria-hidden="true"></i>
+            Login
+          </button>
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
@@ -49,7 +61,7 @@
     </div>
     <div class="reaction-space w-100 m-auto row ps-4 pe-5">
       <button class="col-4 btn pt-2 pb-2"><i class="fa fa-heart-o fa-lg" aria-hidden="true"></i></button>
-      <button class="col-4 btn pt-2 pb-2"><i class="fa fa-comments fa-lg" aria-hidden="true"></i></button>
+      <button class="col-4 btn pt-2 pb-2"><i class="fa fa-comments-o fa-lg" aria-hidden="true"></i></button>
       <button class="col-4 btn pt-2 pb-2"><i class="fa fa-share-square-o fa-lg" aria-hidden="true"></i></button>
     </div>
   </div>
@@ -77,14 +89,48 @@
       </h3>
     </div>
     <div class="image-space h-auto">
-      <img src="https://pbs.twimg.com/media/FUTi0snaQAA7iQe.jpg:large" class="w-100 h-auto" alt="Icon"/>
+      <img src="https://cdn.wallpapersafari.com/54/99/DqKS4l.jpg" class="w-100 h-auto" alt="Icon"/>
     </div>
     <div class="reaction-space w-100 m-auto row ps-4 pe-5">
       <button class="col-4 btn pt-2 pb-2"><i class="fa fa-heart-o fa-lg" aria-hidden="true"></i></button>
-      <button class="col-4 btn pt-2 pb-2"><i class="fa fa-comments fa-lg" aria-hidden="true"></i></button>
+      <button class="col-4 btn pt-2 pb-2"><i class="fa fa-comments-o fa-lg" aria-hidden="true"></i></button>
       <button class="col-4 btn pt-2 pb-2"><i class="fa fa-share-square-o fa-lg" aria-hidden="true"></i></button>
     </div>
   </div>
-
 </div>
 
+<% if session[:user_id] != nil %>
+  <div class="bottom-nav bg-body container-fluid">
+  <div class="container ps-lg-2 ps-md-3 ps-sm-1 ps-xl-4 ps-xxl-5">
+   <form>
+     <div class="d-flex">
+       <%= image_tag asset_path('dummy_profile_female.png'), style: 'width:75px; height:75px;' %>
+       <input name="authenticity_token" type="hidden" value="= form_authenticity_token">
+       <input class="bg-transparent post-border ms-auto me-auto mb-2 border-none w-75 font-color-grey" type="text" placeholder="What's new...">
+       <input accept="image/jpeg,image/png,image/webp,image/gif,video/mp4" id="imageInput" style="display: none;" type="file">
+       <label for="imageInput" class="text-primary mt-4 ms-xxl-5 ms-xl-4 ms-lg-3 ms-md-2 ms-sm-1 font-color-blue">
+         <i class="fa fa-file-image-o fa-2x font-color-blue" aria-hidden="true"></i>
+       </label>
+       <button type="submit" class="btn text-primary ms-xxl-5 ms-xl-4 ms-lg-3 ms-md-2 ms-sm-1" >
+        <i class="fa fa-paper-plane-o fa-2x font-color-blue" aria-hidden="true"></i>
+       </button>
+     </div>
+   </form>
+   </div>
+</div>
+<% else %>
+ <div class="bottom-nav bg-light container-fluid pt-3 pb-3">
+  <div class="container d-flex align-items-center justify-content-center">
+    <div class="">
+    <a class="text-decoration-none" href="/users/login">
+  <button class="btn btn-outline-secondary ms-auto me-auto" >Login</button>
+  </a>
+  <a class="text-decoration-none" href="/users/signup">
+  <button class="btn btn-outline-secondary ms-auto me-auto">Sign up</button>
+  </a>
+  </div>
+  </div>
+ </div>
+<% end %>
+
+<!-- pt-lg-2 pt-md-3 pt-sm-1 pt-xl-4 pt-xxl-5 pb-lg-2 pb-md-3 pb-sm-1 pb-xl-4 pb-xxl-5 -->
